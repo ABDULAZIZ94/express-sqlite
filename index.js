@@ -7,6 +7,10 @@ app.get("/", (req, res) => {
   res.send("ok");
 });
 
+app.post("/", (req, res) => {
+  res.send("post received");
+});
+
 serv_log = () => {
   console.log(`app server at ${hostname}: ${port}`);
 };
