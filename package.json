@@ -1,0 +1,8 @@
+{
+  "name": "express-sqlite",
+  "version": "0.0.0",
+  "author": "abdulazizabdulnoor@gmail.com",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
