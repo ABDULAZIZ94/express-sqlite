@@ -11,11 +11,11 @@ db.run("CREATE TABLE IF NOT EXISTS langs(name text)");
 
 let languages = ["C++", "Python", "Java", "C#", "Go"];
 
-// construct the insert statement with multiple placeholders
-// based on the number of rows
-let placeholders = languages.map((language) => "(?)").join(",");
+let placeholders = languages.map((language) => "('" + language + "')");
 
-let sql = "INSERT INTO langs(name) VALUES " + placeholders;
+console.log("placeholders:" + placeholders);
+let sql = "INSERT INTO langs(name) VALUES ";
+console.log("sql:" + sql);
 
 // insert one row into the langs table
 db.run(sql, placeholders, function (err) {
@@ -26,8 +26,7 @@ db.run(sql, placeholders, function (err) {
   console.log(`A row has been inserted with rowid ${this.lastID}`);
 });
 
-let sql2 = `SELECT DISTINCT name FROM langs
-           ORDER BY name`;
+let sql2 = `SELECT * FROM langs`;
 
 db.all(sql2, [], (err, rows) => {
   if (err) {
