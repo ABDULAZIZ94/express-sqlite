@@ -12,6 +12,9 @@
 # install sqlite3
     npm install sqlite3 --save
 
+# install pug
+    npm install pug --save
+
 # test multiple insert row sql
     INSERT INTO langs(name) VALUES ('c++'),('python'),('java'),('c#'),('go');
 

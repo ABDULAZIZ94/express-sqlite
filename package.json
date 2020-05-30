@@ -4,6 +4,7 @@
   "author": "abdulazizabdulnoor@gmail.com",
   "dependencies": {
     "express": "^4.17.1",
+    "pug": "^3.0.0",
     "sqlite3": "^4.2.0"
   }
 }
