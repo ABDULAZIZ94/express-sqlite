@@ -14,8 +14,15 @@ let db = new sqlite3.Database("./db/chinook.db", (err) => {
 
 db.run("CREATE TABLE IF NOT EXISTS langs(name text)");
 
+let languages = ["C++", "Python", "Java", "C#", "Go"];
+
+// construct the insert statement with multiple placeholders
+// based on the number of rows
+let placeholders = languages.map((language) => "(?)").join(",");
+let sql = "INSERT INTO langs(name) VALUES " + placeholders;
+
 // insert one row into the langs table
-db.run(`INSERT INTO langs(name) VALUES(?)`, ["C"], function (err) {
+db.run(sql, placeholders, function (err) {
   if (err) {
     return console.log(err.message);
   }
