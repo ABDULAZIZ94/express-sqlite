@@ -11,14 +11,14 @@ db.run("CREATE TABLE IF NOT EXISTS langs(name text)");
 
 let languages = ["C++", "Python", "Java", "C#", "Go"];
 
-let placeholders = languages.map((language) => "('" + language + "')");
+let placeholders = languages.map((language) => "(?)");
 
 console.log("placeholders:" + placeholders);
-let sql = "INSERT INTO langs(name) VALUES ";
+let sql = "INSERT INTO langs(name) VALUES " + placeholders;
 console.log("sql:" + sql);
 
 // insert one row into the langs table
-db.run(sql, placeholders, function (err) {
+db.run(sql, languages, function (err) {
   if (err) {
     return console.log(err.message);
   }
