@@ -3,7 +3,6 @@ const app = express();
 const port = 80;
 const hostname = "0.0.0.0";
 const sqlite3 = require("sqlite3").verbose();
-
 // open database in memory
 let db = new sqlite3.Database("./db/chinook.db", (err) => {
   if (err) {
