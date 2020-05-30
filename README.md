@@ -1,5 +1,6 @@
 # express-sqlite
     express framework implementation with sqlite 3 database
+    https://github.com/mapbox/node-sqlite3/wiki
 
 # development milestone
 1. basic template flow on website
