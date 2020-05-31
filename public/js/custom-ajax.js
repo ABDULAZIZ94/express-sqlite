@@ -64,7 +64,7 @@ function fetch_data (){
   .then(response => {
       const contentType = response.headers.get('content-type');
       console.log(contentType);
-      response.text().then(t => console.log(t));
+      response.text().then(t => $('#disp').html(t));
  })
  .then(data => {
      /* process your data further */
