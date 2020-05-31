@@ -15,16 +15,20 @@ routes1.get('/delete', (req, res) => {
 });
 //posts
 routes1.post('/create', (req, res) => {
- 
+  console.log("body: "+req.body);
+  console.log("cookies: "+req.cookies);
 });
 routes1.post('/read', (req, res) => {
-  
+  console.log("body: "+req.body);
+  console.log("cookies: "+req.cookies);
 });
 routes1.post('/update', (req, res) => {
-  
+  console.log("body: "+req.body);
+  console.log("cookies: "+req.cookies);
 });
 routes1.post('/delete', (req, res) => {
-  
+  console.log("body: "+req.body);
+  console.log("cookies: "+req.cookies);
 });
 //export
 module.exports = routes1;
