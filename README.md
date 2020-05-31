@@ -3,16 +3,18 @@
     https://github.com/mapbox/node-sqlite3/wiki
 
 # development milestone
-1. basic template flow on website
+1. basic routing on website
 2. crud using sqlite
+3. sessions and cookies
 
-# installexpress
+# install dependencies
+ installexpress
     npm install express --save
 
-# install sqlite3
+ install sqlite3
     npm install sqlite3 --save
 
-# install pug
+ install pug
     npm install pug --save
 
 # test multiple insert row sql
@@ -28,6 +30,7 @@
         $id: 2,
         $name: "bar"
     });
+
 # exports
     module.exports = db; //just export
     module.exports.con = db; //with module variable
