@@ -1,4 +1,4 @@
-const c = require("./connection");
+const c = require("./db/connection");
 /**
  c.con.close((err) => {
   if (err) {

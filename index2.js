@@ -1,2 +1,2 @@
-const date = require("./testmodule");
+const date = require("./db/testmodule");
 console.log("date now: " + date());
