@@ -44,3 +44,7 @@
     module.exports = db; //just export
     module.exports.con = db; //with module variable
     exports = db; //shortcut of module.exports = db
+
+# comunications
+    [read here](docs/comunications.md)
+    
