@@ -33,12 +33,34 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   console.log('sql:'+sql);
   console.log('cols: '+cols);
   console.log('Vals: '+vals);
-  db.run(sql, vals, function (err) {
+  return db.run(sql, vals,  (err) => {
     if (err) {
-      return console.error(err.message);
+      // console.error(err.message);
+      return `err: ${err.message}`;
     }
-    console.log(`Rows inserted ${this.changes}`);
+    // return console.log(`Rows inserted ${this.changes}`);
+    return `Rows inserted ${this.changes}`;
   });
+}
+
+query_rows =  () => {
+
+}
+
+insert_row_hadith = () => {
+
+}
+
+query_row_hadith = () => {
+
+}
+
+deleted_row_hadith = () => {
+
+}
+
+update_row_hadith = () => {
+
 }
 
 //module.exports = db;

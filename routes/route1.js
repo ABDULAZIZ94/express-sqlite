@@ -23,13 +23,20 @@ routes1.post('/create', (req, res) => {
     connection.create(req.body.table_name,'hadith_text TEXT');
     console.log("body: "+req.body.table_name);
   }else if(req.body.row_col!=null && req.body.row_val!=null){
-    connection.insert('HADITH', [req.body.row_col], [req.body.row_val]);
-    // connection.insert('HADITH' ,['hadith_text'] ,['la ilaha illa allah', 'muhammadarrasullullah'])
+    try{
+      let m = connection.insert('HADITH', [req.body.row_col], [req.body.row_val]);
+      res.send(m);
+    }catch(err){
+      // res.send(err.message);
+    }finally{
+      // res.sendStatus(201);
+    }
+    
     console.log("body: "+req.body.row_col);
     console.log("body: "+req.body.row_val);
   }
 
-  res.sendStatus(201);
+  
   connection.close();
    //action(script:f()) with alert() implementation
   // res.redirect('/create'); //html action('<path>') implementation
