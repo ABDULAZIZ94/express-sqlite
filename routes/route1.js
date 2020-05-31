@@ -19,13 +19,16 @@ routes1.get('/delete', (req, res) => {
 routes1.post('/create', (req, res) => {
   connection.conn(); 
   
-  if(req.body.table_name!=null)
+  if(req.body.table_name!=null){
     connection.create(req.body.table_name,'hadith_text TEXT');
     console.log("body: "+req.body.table_name);
-  if(req.body.row_id!=null)
-    console.log("body: "+req.body.row_id);
-  if(req.body.row_text!=null)
-    console.log("body: "+req.body.row_text);
+  }else if(req.body.row_col!=null && req.body.row_val!=null){
+    connection.insert('HADITH', [req.body.row_col], [req.body.row_val]);
+    // connection.insert('HADITH' ,['hadith_text'] ,['la ilaha illa allah', 'muhammadarrasullullah'])
+    console.log("body: "+req.body.row_col);
+    console.log("body: "+req.body.row_val);
+  }
+
   res.sendStatus(201);
   connection.close();
    //action(script:f()) with alert() implementation
