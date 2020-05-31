@@ -46,5 +46,6 @@
     exports = db; //shortcut of module.exports = db
 
 # comunications
-    [read here](docs/comunications.md)
+[Readhere](docs/comunications.md)
+
     
