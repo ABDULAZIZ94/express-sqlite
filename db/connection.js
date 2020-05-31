@@ -25,3 +25,4 @@ close_db = () => {
 //module.exports = db;
 module.exports.conn = init_db;
 module.exports.close = close_db;
+module.exports.db = db;

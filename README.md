@@ -53,3 +53,6 @@ The main difference between a session and a cookie is that session data is store
 server,whereas cookies store data in the visitor's browser. Sessions are more secure than 
 cookies as it is stored in server. ... But the data in the session is lost when the web 
 browser is closed.
+
+# rest params
+    [rest_params](docs/rest_params.md)
