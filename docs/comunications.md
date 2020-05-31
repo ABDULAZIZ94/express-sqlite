@@ -1,3 +1,4 @@
+[<img src="socket.jpg" width="50%" >](socket.jpg)
 # ways to get data from server
 1. [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
@@ -16,3 +17,5 @@
 
 # two way comunication
 1. [web_socket](https://www.xul.fr/en/html5/websocket.php)
+
+# good luck
