@@ -36,7 +36,7 @@ html(lang='en')
     h1 Assalamualaikum 
     hr
 
-    form(action="/" method="post" role="form")
+    form(action="javascript:post_data()" method="post" role="form")
       div(class="form-group")  
         label(class="col-sm-2") Table
         input(type="text" name="table_name" class="col-sm-8")
@@ -64,5 +64,5 @@ html(lang='en')
     src="/js/bootstrap.js"
   )
   script(
-    src="/js/custom-ajax.js"
+    src="/js/custom-fetch.js"
   )

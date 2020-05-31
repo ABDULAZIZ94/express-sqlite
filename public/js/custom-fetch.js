@@ -1,10 +1,10 @@
-function post_data (data){
+function post_data (){
   fetch("/create", {
-    method='POST',
+    method:'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: data
+    body: $('[name="table_name"]')
   })
   .then(response => {
       const contentType = response.headers.get('content-type');
@@ -16,4 +16,12 @@ function post_data (data){
      /* process your data further */
  })
  .catch(error => console.error(error));
+}
+
+async function fetch_data() {
+  await fetch("/", {method:'POST'})
+  .then(function(response) {
+    response.text().then(t => $('#disp').html(t));
+  })
+ 
 }

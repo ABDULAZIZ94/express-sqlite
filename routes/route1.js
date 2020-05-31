@@ -17,13 +17,13 @@ routes1.get('/delete', (req, res) => {
 });
 //posts
 routes1.post('/create', (req, res) => {
+  console.log("body: "+req.body.table_name);
   connection.conn(); 
   connection.create(req.body.table_name,'hadith_text TEXT');
   connection.close();
-  // res.sendStatus(201);
-  res.redirect('/');
+  res.sendStatus(201); //action(script:f()) with alert() implementation
+  // res.redirect('/create'); //html action('<path>') implementation
   // res.end();
-  console.log("body: "+req.body.table_name);
 });
 routes1.post('/read', (req, res) => {
   console.log("body: "+req.body);
