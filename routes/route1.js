@@ -1,5 +1,6 @@
 const express = require('express');
 const routes1 = express.Router();
+const connection = require("../db/connection");
 
 //gets
 routes1.get('/create', (req, res) => {
@@ -16,6 +17,12 @@ routes1.get('/delete', (req, res) => {
 });
 //posts
 routes1.post('/create', (req, res) => {
+  connection.conn(); 
+  connection.create(req.body.table_name,'hadith_text TEXT');
+  connection.close();
+  // res.sendStatus(201);
+  res.redirect('/');
+  // res.end();
   console.log("body: "+req.body.table_name);
 });
 routes1.post('/read', (req, res) => {

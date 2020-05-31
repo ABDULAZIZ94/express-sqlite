@@ -8,24 +8,26 @@
 3. sessions and cookies
 
 # install dependencies
- installexpress
+installexpress
     npm install express --save
 
- install sqlite3
+install sqlite3
     npm install sqlite3 --save
 
- install pug
+install pug
     npm install pug --save
 
- install multer
+install multer
      npm install multer --save
 
- install express session
+install express session
     npm install express-session --save
  
- install cookie-parser
+install cookie-parser
     npm install cookie-parser --save
-    
+
+install popperjs
+     npm i @popperjs/core --save
 # test multiple insert row sql
     INSERT INTO langs(name) VALUES ('c++'),('python'),('java'),('c#'),('go');
 

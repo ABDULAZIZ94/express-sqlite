@@ -59,18 +59,7 @@
 //  .catch(error => console.error(error));
 // }
 
-function fetch_data (){
-  fetch("http://35.240.171.129/senario")
-  .then(response => {
-      const contentType = response.headers.get('content-type');
-      console.log(contentType);
-      response.text().then(t => $('#disp').html(t));
- })
- .then(data => {
-     /* process your data further */
- })
- .catch(error => console.error(error));
-}
+
 
 
 // fetch_data = async ()=>{

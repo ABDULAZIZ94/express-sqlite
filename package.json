@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "author": "abdulazizabdulnoor@gmail.com",
   "dependencies": {
+    "@popperjs/core": "^2.4.0",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
