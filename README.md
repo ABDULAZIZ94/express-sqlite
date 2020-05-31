@@ -46,6 +46,6 @@
     exports = db; //shortcut of module.exports = db
 
 # comunications
-[Readhere](docs/comunications.md)
+Client <=> server comunications. [Read_here](docs/comunications.md)
 
     
