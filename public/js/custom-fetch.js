@@ -1,10 +1,10 @@
-function post_data (){
+function post_data (data){
   fetch("/create", {
     method:'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: $('[name="table_name"]')
+    body: data
   })
   .then(response => {
       const contentType = response.headers.get('content-type');
