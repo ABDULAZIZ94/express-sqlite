@@ -4,6 +4,6 @@ c.conn();
 //call create()
 c.create('HADITH','hadith_text TEXT');
 
-c.insert('HADITH',['la ilaha illa allah', 'muhammadarrasullullah']);
+c.insert('HADITH' ,['hadith_text'] ,['la ilaha illa allah', 'muhammadarrasullullah']);
 //call close()
 c.close();
