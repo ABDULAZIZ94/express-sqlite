@@ -17,6 +17,15 @@
  install pug
     npm install pug --save
 
+ install multer
+     npm install multer --save
+
+ install express session
+    npm install express-session --save
+ 
+ install cookie-parser
+    npm install cookie-parser --save
+    
 # test multiple insert row sql
     INSERT INTO langs(name) VALUES ('c++'),('python'),('java'),('c#'),('go');
 

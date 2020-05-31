@@ -11,7 +11,7 @@ routes1.get('/update', (req, res) => {
   res.render('update');
 });
 routes1.get('/delete', (req, res) => {
-  
+  res.render('delete');
 });
 //posts
 routes1.post('/create', (req, res) => {
@@ -26,5 +26,5 @@ routes1.post('/update', (req, res) => {
 routes1.post('/delete', (req, res) => {
   
 });
-
+//export
 module.exports = routes1;
