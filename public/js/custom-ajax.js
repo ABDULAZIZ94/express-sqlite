@@ -41,11 +41,47 @@
 //     console.log(data); // JSON data parsed by `response.json()` call
 // });
 
+// function fetch_data (){
+//   console.log("fetching.....");
+//   fetch("http://35.240.171.129/senario")
+//   .then(response => {
+//     const contentType = response.headers.get('content-type');
+//     if (!contentType || !contentType.includes('application/json')) {
+//       console.log(contentType);
+//       console.log(response.text());
+//       throw new TypeError("Oops, we haven't got JSON!");
+//     }
+//     return response.json();
+//  })
+//  .then(data => {
+//      /* process your data further */
+//  })
+//  .catch(error => console.error(error));
+// }
+
 function fetch_data (){
-  console.log("fetching.....");
-  fetch("/", {method: 'POST'})
-  .then(data => console.log(JSON.stringify(data)));
+  fetch("http://35.240.171.129/senario")
+  .then(response => {
+      const contentType = response.headers.get('content-type');
+      console.log(contentType);
+      response.text().then(t => console.log(t));
+ })
+ .then(data => {
+     /* process your data further */
+ })
+ .catch(error => console.error(error));
 }
+
+
+// fetch_data = async ()=>{
+//   await fetch("/senario")
+//   .then(function(response) {
+//     return response.json()
+//   })
+//   .then(function(responseJson) {
+//      alert(responseJson.myString);
+//   })
+// }
 
 // async function fetch_data(url = '/', data = {}) {
 //   // Default options are marked with *
