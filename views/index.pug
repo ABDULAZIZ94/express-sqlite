@@ -33,9 +33,9 @@ html(lang='en')
       li 
         a(href="/delete") Delete
       
-    h1 Assalamualaikum
+    h1 Assalamualaikum 
     hr
-    div(id="disp")
+
     form(action="/" method="post" role="form")
       div(class="form-group")  
         label(class="col-sm-2") Table
@@ -43,6 +43,17 @@ html(lang='en')
         input(type="submit" value="submit" class="col-sm-2")
 
     button(class="btn" onclick="fetch_data()") Fetch data
+
+    mixin pet(name)
+      li.pet= name
+
+    ul
+      +pet('cat')
+      +pet('dog')
+      +pet('pig')
+
+    div(id="disp")
+
   script(
     src="js/popper-core.js"
   )
