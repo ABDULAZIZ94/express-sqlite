@@ -15,6 +15,9 @@ app.use(express.static('public'));
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("*", (req, res) => {
+  res.render("404");
+});
 
 app.post("/", (req, res) => {
   res.send("post received");
