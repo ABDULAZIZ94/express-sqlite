@@ -31,16 +31,8 @@ install popperjs
 # test multiple insert row sql
     INSERT INTO langs(name) VALUES ('c++'),('python'),('java'),('c#'),('go');
 
-# sqlite3 run()
-    // Directly in the function arguments.
-    db.run("UPDATE tbl SET name = ? WHERE id = ?", "bar", 2);
-    // As an array.
-    db.run("UPDATE tbl SET name = ? WHERE id = ?", [ "bar", 2 ]);
-    // As an object with named parameters.
-    db.run("UPDATE tbl SET name = $name WHERE id = $id", {
-        $id: 2,
-        $name: "bar"
-    });
+# sqlite 3
+[read here](docs/sqlite.md)
 
 # exports
     module.exports = db; //just export
