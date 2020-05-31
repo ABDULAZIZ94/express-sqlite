@@ -48,13 +48,13 @@ install popperjs
     exports = db; //shortcut of module.exports = db
 
 # comunications
-Client <=> server comunications. [Read_here](docs/comunications.md)
+Client <=> server comunications. [Read here](docs/comunications.md)
 
-# cookies vs session
-The main difference between a session and a cookie is that session data is stored on the 
-server,whereas cookies store data in the visitor's browser. Sessions are more secure than 
-cookies as it is stored in server. ... But the data in the session is lost when the web 
-browser is closed.
+# cookies and session
+[read here](docs/cookies%20and%20session.md)
 
 # rest params
-    [rest_params](docs/rest_params.md)
+[read here](docs/rest_params.md)
+
+# fetching data from server
+[read here](docs/fetching.md)
