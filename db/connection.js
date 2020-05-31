@@ -3,11 +3,11 @@ let db = null;
 
 init_db = () => {
   //open database connection
-  db = new sqlite3.Database("./db/chinook.db", (err) => {
+  db = new sqlite3.Database("./db/database.db", (err) => {
     if (err) {
       console.error(err.message);
     }
-    console.log("Connected to the chinook database.");
+    console.log("Connected to the database.");
   });
 };
 
@@ -26,13 +26,13 @@ create_table = (table_name,...Args) => {
   db.run("CREATE TABLE IF NOT EXISTS "+table_name+"("+Args+")");
 }
 
-insert_rows = (table_name, [...Args]) => {
-  let placeholders = Args.map((language) => "(?)").join(",");
-  let sql = "INSERT INTO langs(name) VALUES " + placeholders;
+insert_rows = (table_name, [...columns],[...values]) => {
+  let placeholders = values.map((language) => "(?)").join(",");
+  let sql = "INSERT INTO "+table_name+"("+columns+") VALUES " + placeholders;
   // output the INSERT statement
-  console.log(sql);
-  console.log(Args);
-  db.run(sql, Args, function (err) {
+  console.log('sql:'+sql);
+  console.log('Args: '+Args);
+  db.run(sql, values, function (err) {
     if (err) {
       return console.error(err.message);
     }
