@@ -45,7 +45,7 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
 
 query_rows =  (cb) => {
   db.all("SELECT * FROM HADITH", (err, rows) => {
-    cb(JSON.stringify(rows)); 
+    cb(rows); 
   });
 }
 
