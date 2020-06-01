@@ -38,9 +38,12 @@ html(lang='en')
         label(class="col-sm-10") 
         input(type="submit" value="Refresh" class="col-sm-2")
     
-    button(onclick="fetch_hadith_row()") fetch row
-    button(onclick="fetch_hadith_row2()") fetch2 row
+    button(onclick="fetch_hadith_row()" class="col-sm-2" ) fetch row
+    button(onclick="fetch_hadith_row2()" class="col-sm-2" ) fetch2 row
+    br
+    br
     div(id="t1")
+
   script(
     src="js/popper-core.js"
   )

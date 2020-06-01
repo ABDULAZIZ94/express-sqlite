@@ -1,18 +1,17 @@
+function p(){
+  d = $('#i1').val();
+  post_data(d);
+}
+
 function post_data (data){
-  fetch("/create", {
-    method:'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: data
-  })
-  .then(response => {
-      return response.text();
-  })
-  .then(t => {
-      alert('replied: '+t);
-  })
-  .catch(error => console.error(error));
+  alert(data);
+  $.ajax({
+    type: "post",
+    url: 'http://35.240.171.129/create',
+    data: data,
+    success: alert('success'),
+    contentType: "application/json",
+  });
 }
 async function fetch_data() {
   await fetch("/", {method:'POST'})
