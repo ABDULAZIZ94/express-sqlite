@@ -1,5 +1,6 @@
 const express = require('express');
 const routes1 = express.Router();
+const connection = require("../db/connection");
 const sqlite3 = require("sqlite3").verbose();
 //gets
 routes1.get('/create', (req, res) => {
@@ -16,8 +17,18 @@ routes1.get('/read/db', (req, res) => {
     console.log("Connected to the database.");
   });
   db.all("SELECT * FROM HADITH", (err, rows) => {
-    res.send(JSON.stringify(rows)); 
+    res.send(rows); 
   });
+});
+
+
+routes1.get('/read/db2', (req, res) => {
+  function gR(r){
+    res.send(r);
+  }
+  connection.conn();
+  connection.query(gR);
+  connection.close();
 });
 routes1.get('/update', (req, res) => {
   res.render('update');

@@ -7,6 +7,7 @@ init_db = () => {
     if (err) {
       console.error(err.message);
     }
+    // console.log('db: '+db);
     console.log("Connected to the database.");
   });
 };
@@ -43,9 +44,10 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   });
 }
 
-query_rows =  (cb) => {
+query_rows =  (gR) => {
+  var x;
   db.all("SELECT * FROM HADITH", (err, rows) => {
-    cb(rows); 
+    gR(rows); 
   });
 }
 

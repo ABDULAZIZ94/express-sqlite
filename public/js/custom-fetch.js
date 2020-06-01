@@ -28,3 +28,9 @@ async function fetch_hadith_row() {
     response.text().then(t => alert(t));
   })
 }
+async function fetch_hadith_row2() {
+  await fetch("/read/db2")
+  .then(function(response) {
+    response.text().then(t => alert(t));
+  })
+}
