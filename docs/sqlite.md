@@ -1,5 +1,6 @@
 # documentation
 [sqlite3](https://github.com/mapbox/node-sqlite3)
+[sqlite 3 api](https://github.com/mapbox/node-sqlite3/wiki/API)
 
 # sqlite3 run()
     // Directly in the function arguments.

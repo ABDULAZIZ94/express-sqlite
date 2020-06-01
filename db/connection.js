@@ -3,7 +3,7 @@ let db = null;
 
 init_db = () => {
   //open database connection
-  db = new sqlite3.Database("./db/database.db", (err) => {
+  this.db = new sqlite3.Database("./db/database.db", (err) => {
     if (err) {
       console.error(err.message);
     }
@@ -13,7 +13,7 @@ init_db = () => {
 
 close_db = () => {
   // close the database connection
-  db.close((err) => {
+  this.db.close((err) => {
     if (err) {
       return console.error(err.message);
     }
@@ -33,13 +33,13 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   console.log('sql:'+sql);
   console.log('cols: '+cols);
   console.log('Vals: '+vals);
-  return db.run(sql, vals,  (err) => {
+  this.db.run(sql, vals,  (err) => {
     if (err) {
-      // console.error(err.message);
-      return `err: ${err.message}`;
+      // console.error(`err: ${err.message}`);
+      return console.error(`err: ${err.message}`);
     }
-    // return console.log(`Rows inserted ${this.changes}`);
-    return `Rows inserted ${this.changes}`;
+    // console.log(`Rows inserted ${this.changes}`);
+    return console.log(`Rows inserted ${this.changes}`);
   });
 }
 
@@ -68,3 +68,4 @@ module.exports.conn = init_db;
 module.exports.close = close_db;
 module.exports.create = create_table;
 module.exports.insert = insert_rows;
+// module.exports.db = db;
