@@ -44,10 +44,9 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   });
 }
 
-query_rows =  (gR) => {
-  var x;
+query_rows =  (getR) => {
   db.all("SELECT * FROM HADITH", (err, rows) => {
-    gR(rows); 
+    getR(rows); 
   });
 }
 

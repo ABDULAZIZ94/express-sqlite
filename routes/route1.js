@@ -1,7 +1,6 @@
 const express = require('express');
 const routes1 = express.Router();
 const connection = require("../db/connection");
-const sqlite3 = require("sqlite3").verbose();
 //gets
 routes1.get('/create', (req, res) => {
   res.render('create');
@@ -10,28 +9,34 @@ routes1.get('/read', (req, res) => {
   res.render('read');
 });
 routes1.get('/read/db', (req, res) => {
-  let db = new sqlite3.Database("./db/database.db", (err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log("Connected to the database.");
-  });
-  db.all("SELECT * FROM HADITH", (err, rows) => {
-    res.send(rows); 
-  });
-});
-
-
-routes1.get('/read/db2', (req, res) => {
-  function gR(r){
+  //f get rows from conn
+  getR = (r) => {
     res.send(r);
   }
   connection.conn();
-  connection.query(gR);
+  connection.query(getR);
+  // connection.close();
+});
+routes1.get('/read/db2', (req, res) => {
+  //f get rows from conn
+  getR = (r) => {
+    res.send(r);
+  }
+  // connection.conn();
+  connection.query(getR);
   connection.close();
 });
 routes1.get('/update', (req, res) => {
   res.render('update');
+});
+routes1.get('/update/db', (req, res) => {
+    //f get rows from conn
+    getR = (r) => {
+      res.send(r);
+    }
+    connection.conn();
+    connection.query(getR);
+    connection.close();
 });
 routes1.get('/delete', (req, res) => {
   res.render('delete');
