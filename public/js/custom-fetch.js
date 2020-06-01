@@ -1,7 +1,7 @@
 function post_data (form){
   // const form = new FormData(document.getElementById('f1'));
   // let form = $('#f1');
-  console.table(form);
+  // console.table(form);
   $.ajax({
     method: "POST",
     url: "/create",

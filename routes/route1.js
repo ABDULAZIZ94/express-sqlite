@@ -35,7 +35,7 @@ routes1.get('/delete', (req, res) => {
 //posts
 routes1.post('/create', (req, res) => {
   let db = connection.conn();
-  console.log("body: "+req.body.table_name);
+  // console.log("body: "+req.body.table_name);
   if(req.body.table_name!=null){
     // console.log("body: "+req.body.table_name);
     connection.create(db, req.body.table_name,'hadith_text TEXT');

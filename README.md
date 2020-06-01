@@ -9,21 +9,27 @@
 
 # install dependencies
 installexpress
+
     npm install express --save
 
 install sqlite3
+
     npm install sqlite3 --save
 
 install pug
+
     npm install pug --save
 
 install multer
+
      npm install multer --save
 
 install express session
+
     npm install express-session --save
  
 install cookie-parser
+
     npm install cookie-parser --save
 
 install popperjs

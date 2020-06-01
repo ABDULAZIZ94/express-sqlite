@@ -38,3 +38,6 @@ check content type
 
   const contentType = response.headers.get('content-type');
   console.log(contentType);
+
+# ajax/fetch post form
+//use data not body
