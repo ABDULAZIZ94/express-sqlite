@@ -1,13 +1,14 @@
 const express = require("express");
-var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const app = express();
 const routes1 = require('./routes/route1');
 const port = 80;
 const hostname = "0.0.0.0";
+
 //confugure pug engine
 app.set('view engine', 'pug');
 app.set('views', './views');

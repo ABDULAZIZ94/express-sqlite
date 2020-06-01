@@ -3,7 +3,7 @@ let db = null;
 
 init_db = () => {
   //open database connection
-  this.db = new sqlite3.Database("./db/database.db", (err) => {
+  db = new sqlite3.Database("./db/database.db", (err) => {
     if (err) {
       console.error(err.message);
     }
@@ -13,7 +13,7 @@ init_db = () => {
 
 close_db = () => {
   // close the database connection
-  this.db.close((err) => {
+  db.close((err) => {
     if (err) {
       return console.error(err.message);
     }
@@ -33,18 +33,24 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   console.log('sql:'+sql);
   console.log('cols: '+cols);
   console.log('Vals: '+vals);
-  this.db.run(sql, vals,  (err) => {
+  db.run(sql, vals,  (err) => {
     if (err) {
       // console.error(`err: ${err.message}`);
       return console.error(`err: ${err.message}`);
     }
-    // console.log(`Rows inserted ${this.changes}`);
-    return console.log(`Rows inserted ${this.changes}`);
+    // console.log(`Rows inserted ${changes}`);
+    return console.log(`Rows inserted ${changes}`);
   });
 }
 
-query_rows =  () => {
-
+query_rows =  (cb) => {
+  r = [];
+  db.all("SELECT * FROM HADITH", (err, rows) => {
+    rows.forEach(row => {
+      row.hadith_text
+    });
+    return cb(r);
+  });
 }
 
 insert_row_hadith = () => {
@@ -68,4 +74,5 @@ module.exports.conn = init_db;
 module.exports.close = close_db;
 module.exports.create = create_table;
 module.exports.insert = insert_rows;
+module.exports.query = query_rows;
 // module.exports.db = db;
