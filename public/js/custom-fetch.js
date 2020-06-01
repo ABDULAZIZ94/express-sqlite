@@ -9,6 +9,17 @@ function post_data (form){
     data: form//{ table_name: "HADITH" } //use data not body
   })
 }
+function post_any_data (url, [...form]){
+  // const form = new FormData(document.getElementById('f1'));
+  // let form = $('#f1');
+  // console.table(form);
+  $.ajax({
+    method: "POST",
+    url: url,
+    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+    data: form//{ table_name: "HADITH" } //use data not body
+  })
+}
 async function fetch_data() {
   await fetch("/", {method:'POST'})
   .then(function(response) {
