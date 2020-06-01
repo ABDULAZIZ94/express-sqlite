@@ -14,14 +14,12 @@ function post_data (data){
   })
   .catch(error => console.error(error));
 }
-
 async function fetch_data() {
   await fetch("/", {method:'POST'})
   .then(function(response) {
     response.text().then(t => $('#disp').html(t));
   })
 }
-
 async function fetch_hadith_row() {
   await fetch("/read/db")
   .then(function(response) {

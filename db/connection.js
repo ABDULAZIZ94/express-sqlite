@@ -1,16 +1,14 @@
 const sqlite3 = require("sqlite3").verbose();
-
-
+//generelized functions
 init_db = () => {
   //open database connection
-let  db = new sqlite3.Database("./db/database.db", (err) => {
+  let  db = new sqlite3.Database("./db/database.db", (err) => {
     if (err) {
       console.error(err.message);
     }
     // console.log('db: '+db);
     console.log("Connected to the database.");
   });
-
   return db;
 };
 
@@ -30,6 +28,7 @@ create_table = (table_name,...Args) => {
 }
 
 insert_rows = (table_name, [...cols], [...vals] ) => {
+  //insert row(s)
   let placeholders = vals.map((v) => "(?)").join(",");
   let sql = "INSERT INTO "+table_name+"("+cols+") VALUES " + placeholders;
   // output the INSERT statement
@@ -51,7 +50,7 @@ query_rows =  (db, getR) => {
     getR(rows); 
   });
 }
-
+//specific functions
 insert_row_hadith = () => {
 
 }
@@ -74,4 +73,3 @@ module.exports.close = close_db;
 module.exports.create = create_table;
 module.exports.insert = insert_rows;
 module.exports.query = query_rows;
-// module.exports.db = db;
