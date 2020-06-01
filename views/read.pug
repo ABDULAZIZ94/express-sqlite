@@ -40,6 +40,8 @@ html(lang='en')
         label(class="col-sm-10") 
         input(type="submit" value="Refresh" class="col-sm-2")
     
+    button(onclick="fetch_hadith_row()") fetch row
+
   script(
     src="js/popper-core.js"
   )
@@ -48,4 +50,7 @@ html(lang='en')
   )
   script(
     src="/js/bootstrap.js"
+  )
+  script(
+    src="/js/custom-fetch.js"
   )

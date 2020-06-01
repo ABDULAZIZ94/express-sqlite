@@ -39,17 +39,13 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
       return console.error(`err: ${err.message}`);
     }
     // console.log(`Rows inserted ${changes}`);
-    return console.log(`Rows inserted ${changes}`);
+    return console.log(`Rows inserted ${this.changes}`);
   });
 }
 
 query_rows =  (cb) => {
-  r = [];
   db.all("SELECT * FROM HADITH", (err, rows) => {
-    rows.forEach(row => {
-      row.hadith_text
-    });
-    return cb(r);
+    cb(JSON.stringify(rows)); 
   });
 }
 

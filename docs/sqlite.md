@@ -12,3 +12,16 @@
         $id: 2,
         $name: "bar"
     });
+
+# sqlite3 commads
+open database using cli
+    sqlite3 <db_name>.db
+
+select *
+    SELECT * FROM TABLE
+
+describe
+    .describe
+
+quit
+    .quit

@@ -21,3 +21,10 @@ async function fetch_data() {
     response.text().then(t => $('#disp').html(t));
   })
 }
+
+async function fetch_hadith_row() {
+  await fetch("/read/db")
+  .then(function(response) {
+    response.text().then(t => alert(t));
+  })
+}
