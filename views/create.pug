@@ -35,7 +35,7 @@ html(lang='en')
       
     h1 Create Table
     hr
-    form(  action='javascript: post_data()' method="post" role="form" )
+    form(  action=`javascript: post_data($('#f1'))` method="post" role="form" )
       div(class="form-group")  
         label(class="col-sm-2") Table Name
         input( id="f1" type="text" name="table_name" class="col-sm-8")

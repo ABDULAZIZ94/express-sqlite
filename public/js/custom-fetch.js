@@ -1,12 +1,12 @@
-function post_data (){
+function post_data (form){
   // const form = new FormData(document.getElementById('f1'));
-  let form = $('#f1');
+  // let form = $('#f1');
   console.table(form);
   $.ajax({
     method: "POST",
     url: "/create",
     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-    data: form//{ table_name: "HADITH" }
+    data: form//{ table_name: "HADITH" } //use data not body
   })
 }
 async function fetch_data() {
