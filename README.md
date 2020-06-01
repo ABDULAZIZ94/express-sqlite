@@ -50,3 +50,6 @@ Client <=> server comunications. [Read here](docs/comunications.md)
 
 # fetching data from server
 [read here](docs/fetching.md)
+
+# ajax data from server
+[read here](docs/ajax.md)

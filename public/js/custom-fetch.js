@@ -1,11 +1,13 @@
 function post_data (){
-  const form = new FormData(document.getElementById('login-form'));
+  // const form = new FormData(document.getElementById('f1'));
+  let form = $('#f1');
   console.table(form);
-  fetch('/create', {
-    method: 'POST',
-    data: form
-  });
-  return resp.json(); 
+  $.ajax({
+    method: "POST",
+    url: "/create",
+    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+    data: form//{ table_name: "HADITH" }
+  })
 }
 async function fetch_data() {
   await fetch("/", {method:'POST'})
