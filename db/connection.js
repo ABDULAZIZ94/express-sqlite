@@ -1,18 +1,20 @@
 const sqlite3 = require("sqlite3").verbose();
-let db = null;
+
 
 init_db = () => {
   //open database connection
-  db = new sqlite3.Database("./db/database.db", (err) => {
+let  db = new sqlite3.Database("./db/database.db", (err) => {
     if (err) {
       console.error(err.message);
     }
     // console.log('db: '+db);
     console.log("Connected to the database.");
   });
+
+  return db;
 };
 
-close_db = () => {
+close_db = (db) => {
   // close the database connection
   db.close((err) => {
     if (err) {
@@ -44,7 +46,7 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   });
 }
 
-query_rows =  (getR) => {
+query_rows =  (db, getR) => {
   db.all("SELECT * FROM HADITH", (err, rows) => {
     getR(rows); 
   });

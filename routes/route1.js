@@ -13,18 +13,18 @@ routes1.get('/read/db', (req, res) => {
   getR = (r) => {
     res.send(r);
   }
-  connection.conn();
-  connection.query(getR);
-  // connection.close();
+  let db = connection.conn();
+  connection.query(db, getR);
+  // connection.close(db);
 });
 routes1.get('/read/db2', (req, res) => {
   //f get rows from conn
   getR = (r) => {
     res.send(r);
   }
-  // connection.conn();
-  connection.query(getR);
-  connection.close();
+  // let db = connection.conn();
+  connection.query(db, getR);
+  connection.close(db);
 });
 routes1.get('/update', (req, res) => {
   res.render('update');
