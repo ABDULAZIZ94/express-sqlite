@@ -45,18 +45,28 @@ insert_rows = (table_name, [...cols], [...vals] ) => {
   });
 }
 
-query_rows =  (db, getR) => {
-  db.all("SELECT * FROM HADITH", (err, rows) => {
+query_rows =  (db, table_name, getR) => {
+  db.all("SELECT * FROM "+table_name, (err, rows) => {
     getR(rows); 
+    // console.log(rows);
   });
 }
 //specific functions
-insert_row_hadith = () => {
-
+insert_row_hadith = (db,[...cols], [...vals], getR) => {
+  let placeholders = vals.map((v) => "(?)").join(",");
+  $sql = "INSERT INTO HADITH("+cols+") VALUES "+ placeholders;
+  db.run(sql, vals, err => {
+    if(err){
+      return console.error(`err: ${err.message}`);
+    }
+    getR(`Rows inserted ${this.changes}`);
+  });
 }
 
-query_row_hadith = () => {
-
+query_row_hadith = (db) => {
+  db.all("SELECT * FROM HADITH", (err, rows) => {
+    getR(rows); 
+  });
 }
 
 deleted_row_hadith = () => {
@@ -73,3 +83,4 @@ module.exports.close = close_db;
 module.exports.create = create_table;
 module.exports.insert = insert_rows;
 module.exports.query = query_rows;
+module.exports.query_hadith = query_row_hadith;
