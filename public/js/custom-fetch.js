@@ -1,17 +1,11 @@
-function p(){
-  d = $('#i1').val();
-  post_data(d);
-}
-
-function post_data (data){
-  alert(data);
-  $.ajax({
-    type: "post",
-    url: 'http://35.240.171.129/create',
-    data: data,
-    success: alert('success'),
-    contentType: "application/json",
+function post_data (){
+  const form = new FormData(document.getElementById('login-form'));
+  console.table(form);
+  fetch('/create', {
+    method: 'POST',
+    data: form
   });
+  return resp.json(); 
 }
 async function fetch_data() {
   await fetch("/", {method:'POST'})
