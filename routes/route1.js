@@ -17,15 +17,6 @@ routes1.get('/read/db', (req, res) => {
   connection.query(db,'HADITH' ,getR);
   // connection.close(db);
 });
-routes1.post('/read/db2', (req, res) => {
-  //f get rows from conn
-  getR = (r) => {
-    res.send(r);
-  }
-  let db = connection.conn();
-  connection.query_hadith(db, getR);
-  connection.close(db);
-});
 routes1.get('/update', (req, res) => {
   res.render('update');
 });
@@ -43,22 +34,30 @@ routes1.get('/delete', (req, res) => {
 });
 //posts
 routes1.post('/create', (req, res) => {
-  connection.conn(); 
+  let db = connection.conn(); 
   if(req.body.table_name!=null){
-    connection.create(req.body.table_name,'hadith_text TEXT');
+    connection.create(db, req.body.table_name,'hadith_text TEXT');
     console.log("body: "+req.body.table_name);
   }else if(req.body.row_col!=null && req.body.row_val!=null){
-    connection.insert('HADITH', [req.body.row_col], [req.body.row_val]);
-    res.sendStatus(202);   
+    connection.insert(db, 'HADITH', [req.body.row_col], [req.body.row_val]);
     console.log("body: "+req.body.row_col);
     console.log("body: "+req.body.row_val);
   }
+  res.sendStatus(202); 
   connection.close();
-
 });
 routes1.post('/read', (req, res) => {
   console.log("body: "+req.body);
   console.log("cookies: "+req.cookies);
+});
+routes1.post('/read/db2', (req, res) => {
+  //f get rows from conn
+  getR = (r) => {
+    res.send(r);
+  }
+  let db = connection.conn();
+  connection.query_hadith(db, getR);
+  connection.close(db);
 });
 routes1.post('/update', (req, res) => {
   console.log("body: "+req.body);

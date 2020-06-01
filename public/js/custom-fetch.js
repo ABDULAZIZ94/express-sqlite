@@ -42,8 +42,8 @@ async function fetch_hadith_row2() {
   });
 }
 function array_obj_to_table(data){
-  table = "<table>";
-  data.forEach(d => table+="<tr><td style='border: 1px solid black'>"+d.hadith_text+"</td></tr>");
+  table = "<table class='text-center col-sm-12'>";
+  data.forEach(d => table+="<tr><td>"+d.hadith_text+"</td></tr>");
   table += "</table>";
   return table;
 }

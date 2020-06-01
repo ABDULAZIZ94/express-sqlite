@@ -22,12 +22,12 @@ close_db = (db) => {
   });
 }
 
-create_table = (table_name,...Args) => {
+create_table = (db, table_name,...Args) => {
   //create table()
   db.run("CREATE TABLE IF NOT EXISTS "+table_name+"("+Args+")");
 }
 
-insert_rows = (table_name, [...cols], [...vals] ) => {
+insert_rows = (db, table_name, [...cols], [...vals] ) => {
   //insert row(s)
   let placeholders = vals.map((v) => "(?)").join(",");
   let sql = "INSERT INTO "+table_name+"("+cols+") VALUES " + placeholders;
