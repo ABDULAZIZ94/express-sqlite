@@ -33,18 +33,14 @@ routes1.get('/delete', (req, res) => {
   res.render('delete');
 });
 //posts
-routes1.post('/create', (req, res) => {
-  let db = connection.conn();
+routes1.post('/create/createtable', (req, res) => {
   if(req.body.table_name!=null){
-    console.log("body: "+req.body.table_name);
+    let db = connection.conn();
     connection.create(db, req.body.table_name,'hadith_text TEXT');
-  }else if(req.body.row_col!=null && req.body.row_val!=null){
-    connection.insert(db, 'HADITH', [req.body.row_col], [req.body.row_val]);
-    console.log("body: "+req.body.row_col);
-    console.log("body: "+req.body.row_val);
+    res.sendStatus(202); 
+    connection.close();
   }
-  res.sendStatus(202); 
-  connection.close();
+  // console.log("body: "+req.body.table_name);
 });
 routes1.post('/create/insertrow', (req, res) => {
   let db = connection.conn();

@@ -7,6 +7,9 @@
 2. crud using sqlite
 3. sessions and cookies
 
+# future milestone
+1. filter 429 Too Many Request
+
 # install dependencies
 installexpress
 
