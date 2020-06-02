@@ -34,11 +34,12 @@ routes1.get('/delete', (req, res) => {
 });
 //posts
 routes1.post('/create/createtable', (req, res) => {
+  console.log(req.body.table_name);
   if(req.body.table_name!=null){
     let db = connection.conn();
     connection.create(db, req.body.table_name,'hadith_text TEXT');
     res.sendStatus(202); 
-    connection.close();
+    connection.close(db);
   }
   // console.log("body: "+req.body.table_name);
 });

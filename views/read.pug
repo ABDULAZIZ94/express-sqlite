@@ -33,13 +33,7 @@ html(lang='en')
       
     h1 Table(s) List
     hr
-    form(action="/" method="post" role="form")
-      div(class="form-group")  
-        label(class="col-sm-10") 
-        input(type="submit" value="Refresh" class="col-sm-2")
-    
-    button(onclick="fetch_hadith_row()" class="col-sm-2" ) fetch row
-    button(onclick="fetch_hadith_row2()" class="col-sm-2" ) fetch2 row
+    button(onclick="fetch_hadith_row()" class="col-sm-2" ) refresh
     br
     br
     div(id="t1")
@@ -54,5 +48,5 @@ html(lang='en')
     src="/js/bootstrap.js"
   )
   script(
-    src="/js/custom-fetch.js"
+    src="/js/read.js"
   )
