@@ -6,12 +6,14 @@
   "configurations": [
     {
       "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
+      "request": "attach",
+      "name": "Attach to remote",
+      "address": "35.240.171.129",
+      "port": "8229",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/routes/route1.js"
+      "program": "${workspaceFolder}/index.js"
     }
   ]
 }
