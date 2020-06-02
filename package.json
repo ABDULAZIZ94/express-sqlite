@@ -6,7 +6,8 @@
   "scripts": {
     "test3": "nodemon index3.js",
     "test2": "nodemon index2.js",
-    "test": "nodemon index.js"
+    "test":  "nodemon index.js",
+    "debug": "DEBUG=express:* nodemon index.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.4.0",
